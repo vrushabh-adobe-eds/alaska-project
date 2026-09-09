@@ -6,25 +6,37 @@
 /* stylelint-disable no-descending-specificity -- independent footer sub-components */
 
 :root {
-  --footer-bg: #01426a;
+  --footer-page-bg: #01426a;   /* lighter blue page background around the card */
+  --footer-card-bg: #00213e;   /* dark navy rounded card interior */
   --footer-fg: #fff;
   --footer-muted: rgb(255 255 255 / 70%);
   --footer-divider: rgb(255 255 255 / 15%);
   --footer-indicator: rgb(255 255 255 / 60%);
   --footer-maxw: 1200px;
+  --footer-card-radius: 24px;
 }
 
 footer {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--footer-bg);
+  background-color: var(--footer-page-bg);
   color: var(--footer-fg);
   font-family: var(--body-font-family);
   font-size: 14px;
+  padding: 24px;
 }
 
-/* decorative Auro "swoosh" curves, bottom-right (matches source) */
-footer::after {
+/* the dark navy rounded card */
+footer .footer-inner {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--footer-maxw);
+  margin: 0 auto;
+  padding: 8px 40px 32px;
+  background-color: var(--footer-card-bg);
+  border-radius: var(--footer-card-radius);
+}
+
+/* decorative Auro "swoosh" curves, bottom-right of the card */
+footer .footer-inner::after {
   content: "";
   position: absolute;
   right: 0;
@@ -35,12 +47,6 @@ footer::after {
   background-image:
     radial-gradient(120% 120% at 100% 100%, transparent 61%, rgb(0 131 138 / 45%) 61.4%, transparent 62.2%),
     radial-gradient(140% 140% at 100% 100%, transparent 72%, rgb(0 131 138 / 30%) 72.4%, transparent 73.4%);
-}
-
-footer .footer-inner {
-  max-width: var(--footer-maxw);
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 footer a {
@@ -246,7 +252,14 @@ footer .footer-logo-ow {
 
 /* ===== mobile (<900px): accordion + stacking ===== */
 @media (width <= 899px) {
-  footer .footer-inner { padding: 0; }
+  footer {
+    padding: 12px;
+  }
+
+  footer .footer-inner {
+    padding: 8px 0 24px;
+    border-radius: 16px;
+  }
 
   footer .footer-grid {
     display: block;
