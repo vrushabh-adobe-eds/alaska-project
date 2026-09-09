@@ -133,15 +133,13 @@ export default async function decorate(block) {
   const grid = el('div', 'footer-grid');
   GROUPS.forEach((g, i) => grid.append(buildLinkGroup(g, i)));
 
-  // "Get the app" column (QR + badges) sits alongside on desktop, in Zone B on mobile
+  // "Get the app" column — single QR code (matches the live /en-gb footer)
   const appCol = el('div', 'footer-col footer-col-app');
   appCol.innerHTML = `
     <h2 class="footer-col-title">Get the app</h2>
-    <div class="footer-app-badges">
-      <a href="https://apps.apple.com/app/alaska-airlines/id408855703" aria-label="Download on the App Store" target="_blank" rel="noopener noreferrer"><img src="${ICON}/app-store.svg" alt="Download on the App Store" height="40"></a>
-      <a href="https://play.google.com/store/apps/details?id=com.alaskaairlines.android" aria-label="Get it on Google Play" target="_blank" rel="noopener noreferrer"><img src="${ICON}/google-play.svg" alt="Get it on Google Play" height="40"></a>
-      <a href="${SITE}/content/mobile" aria-label="Alaska and Hawaiian app"><img src="${ICON}/dual-brand-app.svg" alt="Alaska and Hawaiian app" height="40"></a>
-    </div>`;
+    <a class="footer-app-qr" href="https://www.atmosrewards.com/en-gb/content/mobile-apps" aria-label="Get the Alaska Airlines app">
+      <img src="${ICON}/dual-brand-app.svg" alt="Scan to download the Alaska Airlines app" width="88" height="88">
+    </a>`;
   grid.append(appCol);
   zoneA.append(grid);
 
