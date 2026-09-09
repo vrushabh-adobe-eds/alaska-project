@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="563" viewBox="0 0 750 563" role="img" aria-label="Alaska Airlines destination">
+  <rect width="750" height="563" fill="#01426a"/>
+  <path d="M0 420 Q375 300 750 420 L750 563 L0 563 Z" fill="#013456"/>
+  <circle cx="600" cy="120" r="60" fill="#2774ae" opacity="0.5"/>
+  <text x="375" y="300" font-family="Helvetica, Arial, sans-serif" font-size="42" fill="#ffffff" text-anchor="middle" opacity="0.85">Alaska</text>
+</svg>

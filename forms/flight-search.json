@@ -1,0 +1,185 @@
+{
+  "id": "flight-search",
+  "title": "Book a flight",
+  "action": "https://www.alaskaair.com/search",
+  "method": "GET",
+  "tabs": [
+    { "id": "flights", "label": "Flights", "icon": "plane", "default": true },
+    { "id": "checkin", "label": "Check in", "icon": "check-circle" },
+    { "id": "manage", "label": "Manage trips", "icon": "suitcase" }
+  ],
+  "fieldsets": [
+    {
+      "tab": "flights",
+      "fields": [
+        {
+          "name": "tripType",
+          "type": "radio-group",
+          "label": "Trip type",
+          "options": [
+            { "value": "roundtrip", "label": "Return", "default": true },
+            { "value": "oneway", "label": "One way" },
+            { "value": "multicity", "label": "Multi-city" }
+          ],
+          "validation": { "required": true }
+        },
+        {
+          "name": "origin",
+          "type": "autocomplete",
+          "label": "From",
+          "placeholder": "City or airport",
+          "datasource": "/api/airports.json",
+          "validation": {
+            "required": true,
+            "minLength": 3,
+            "customRule": "validAirport",
+            "messages": {
+              "required": "Please enter a departure city or airport.",
+              "customRule": "Please select a valid airport from the suggestions."
+            }
+          },
+          "accessibility": { "aria-label": "Departure city or airport code" }
+        },
+        {
+          "name": "destination",
+          "type": "autocomplete",
+          "label": "To",
+          "placeholder": "City or airport",
+          "datasource": "/api/airports.json",
+          "validation": {
+            "required": true,
+            "minLength": 3,
+            "customRule": "validAirport",
+            "notEqualTo": "origin",
+            "messages": {
+              "required": "Please enter an arrival city or airport.",
+              "customRule": "Please select a valid airport from the suggestions.",
+              "notEqualTo": "Destination must be different from origin."
+            }
+          },
+          "accessibility": { "aria-label": "Arrival city or airport code" }
+        },
+        {
+          "name": "departDate",
+          "type": "date",
+          "label": "Depart",
+          "validation": {
+            "required": true,
+            "minDate": "today",
+            "maxDate": "+330days",
+            "messages": {
+              "required": "Please select a departure date.",
+              "minDate": "Departure date cannot be in the past.",
+              "maxDate": "Bookings can only be made up to 330 days in advance."
+            }
+          }
+        },
+        {
+          "name": "returnDate",
+          "type": "date",
+          "label": "Return",
+          "dependsOn": { "field": "tripType", "value": "roundtrip", "action": "show" },
+          "validation": {
+            "required": true,
+            "minDate": "field:departDate",
+            "maxDate": "+330days",
+            "messages": {
+              "required": "Please select a return date.",
+              "minDate": "Return date must be on or after the departure date."
+            }
+          }
+        },
+        {
+          "name": "passengers",
+          "type": "stepper-group",
+          "label": "Passengers",
+          "fields": [
+            { "name": "adults", "label": "Adults (16+)", "min": 1, "max": 9, "default": 1 },
+            { "name": "children", "label": "Children (2–15)", "min": 0, "max": 8, "default": 0 },
+            { "name": "infants", "label": "Infants (under 2)", "min": 0, "max": 2, "default": 0 }
+          ],
+          "validation": {
+            "customRule": "maxTotalPassengers",
+            "messages": { "customRule": "Maximum 9 passengers per booking." }
+          }
+        },
+        {
+          "name": "usePoints",
+          "type": "toggle",
+          "label": "Use Atmos Rewards points",
+          "default": false
+        },
+        {
+          "name": "promoCode",
+          "type": "text",
+          "label": "Promo code",
+          "placeholder": "Enter code",
+          "collapsible": true,
+          "validation": {
+            "required": false,
+            "pattern": "^[A-Za-z0-9]{4,10}$",
+            "messages": { "pattern": "Promo code must be 4–10 alphanumeric characters." }
+          }
+        }
+      ],
+      "submit": { "label": "Search flights", "icon": "search", "style": "primary" }
+    },
+    {
+      "tab": "checkin",
+      "fields": [
+        {
+          "name": "confirmationCode",
+          "type": "text",
+          "label": "Confirmation code",
+          "placeholder": "e.g. ABCDEF",
+          "validation": {
+            "required": true,
+            "pattern": "^[A-Za-z]{6}$",
+            "messages": {
+              "required": "Please enter your confirmation code.",
+              "pattern": "Confirmation code must be 6 letters."
+            }
+          }
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "label": "Last name",
+          "validation": {
+            "required": true,
+            "minLength": 2,
+            "maxLength": 50,
+            "messages": { "required": "Please enter the passenger's last name." }
+          }
+        }
+      ],
+      "submit": { "label": "Check in", "style": "primary" }
+    },
+    {
+      "tab": "manage",
+      "fields": [
+        {
+          "name": "confirmationCode",
+          "type": "text",
+          "label": "Confirmation code",
+          "placeholder": "e.g. ABCDEF",
+          "validation": {
+            "required": true,
+            "pattern": "^[A-Za-z]{6}$",
+            "messages": {
+              "required": "Please enter your confirmation code.",
+              "pattern": "Confirmation code must be 6 letters."
+            }
+          }
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "label": "Last name",
+          "validation": { "required": true, "minLength": 2 }
+        }
+      ],
+      "submit": { "label": "Find trip", "style": "primary" }
+    }
+  ]
+}

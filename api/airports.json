@@ -1,0 +1,32 @@
+{
+  "total": 24,
+  "offset": 0,
+  "limit": 24,
+  "data": [
+    { "code": "SEA", "city": "Seattle", "name": "Seattle–Tacoma International" },
+    { "code": "PDX", "city": "Portland", "name": "Portland International" },
+    { "code": "ANC", "city": "Anchorage", "name": "Ted Stevens Anchorage International" },
+    { "code": "SFO", "city": "San Francisco", "name": "San Francisco International" },
+    { "code": "LAX", "city": "Los Angeles", "name": "Los Angeles International" },
+    { "code": "SAN", "city": "San Diego", "name": "San Diego International" },
+    { "code": "LAS", "city": "Las Vegas", "name": "Harry Reid International" },
+    { "code": "PHX", "city": "Phoenix", "name": "Phoenix Sky Harbor International" },
+    { "code": "DEN", "city": "Denver", "name": "Denver International" },
+    { "code": "ORD", "city": "Chicago", "name": "Chicago O'Hare International" },
+    { "code": "DFW", "city": "Dallas", "name": "Dallas/Fort Worth International" },
+    { "code": "JFK", "city": "New York", "name": "John F. Kennedy International" },
+    { "code": "EWR", "city": "Newark", "name": "Newark Liberty International" },
+    { "code": "BOS", "city": "Boston", "name": "Boston Logan International" },
+    { "code": "IAD", "city": "Washington", "name": "Washington Dulles International" },
+    { "code": "ATL", "city": "Atlanta", "name": "Hartsfield–Jackson Atlanta International" },
+    { "code": "MIA", "city": "Miami", "name": "Miami International" },
+    { "code": "HNL", "city": "Honolulu", "name": "Daniel K. Inouye International" },
+    { "code": "OGG", "city": "Maui", "name": "Kahului Airport" },
+    { "code": "LHR", "city": "London", "name": "London Heathrow" },
+    { "code": "LGW", "city": "London", "name": "London Gatwick" },
+    { "code": "YVR", "city": "Vancouver", "name": "Vancouver International" },
+    { "code": "YYZ", "city": "Toronto", "name": "Toronto Pearson International" },
+    { "code": "MEX", "city": "Mexico City", "name": "Benito Juárez International" }
+  ],
+  ":type": "sheet"
+}
