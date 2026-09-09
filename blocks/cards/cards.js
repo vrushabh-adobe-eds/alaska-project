@@ -99,7 +99,13 @@ async function renderFromIndex(block, cfg) {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`query-index ${res.status}`);
     const json = await res.json();
-    const entries = (json.data || []).slice(0, limit);
+    // Resolve rows whether the pipeline split the sheet (json.data) or returned
+    // the whole multi-sheet workbook (json[sheet].data) — e.g. local dev server.
+    let rows = json.data;
+    if (!Array.isArray(rows) && cfg.sheet && json[cfg.sheet]) {
+      rows = json[cfg.sheet].data || json[cfg.sheet];
+    }
+    const entries = (rows || []).slice(0, limit);
     const ul = document.createElement('ul');
     entries.forEach((e) => ul.append(cardFromEntry(e)));
     block.replaceChildren(ul);
