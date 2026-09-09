@@ -66,7 +66,13 @@ function cardFromEntry(entry) {
     } else {
       const pic = createOptimizedPicture(entry.image, entry.title || '', false, [{ width: '750' }]);
       const img = pic.querySelector('img');
-      if (img) { img.loading = 'lazy'; img.decoding = 'async'; }
+      if (img) {
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        // explicit dims reserve space → no CLS
+        img.setAttribute('width', '750');
+        img.setAttribute('height', '563');
+      }
       imgWrap.append(pic);
     }
     li.append(imgWrap);
