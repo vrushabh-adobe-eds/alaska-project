@@ -7,12 +7,12 @@
     "offset": 0,
     "limit": 6,
     "data": [
-      { "path": "/en-gb/destinations/seattle", "title": "Seattle", "city": "Seattle", "image": "/blocks/cards/placeholder.svg", "price": "199", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
-      { "path": "/en-gb/destinations/san-francisco", "title": "San Francisco", "city": "San Francisco", "image": "/blocks/cards/placeholder.svg", "price": "249", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
-      { "path": "/en-gb/destinations/los-angeles", "title": "Los Angeles", "city": "Los Angeles", "image": "/blocks/cards/placeholder.svg", "price": "229", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
-      { "path": "/en-gb/destinations/new-york", "title": "New York", "city": "New York", "image": "/blocks/cards/placeholder.svg", "price": "279", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
-      { "path": "/en-gb/destinations/honolulu", "title": "Honolulu", "city": "Honolulu", "image": "/blocks/cards/placeholder.svg", "price": "459", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
-      { "path": "/en-gb/destinations/anchorage", "title": "Anchorage", "city": "Anchorage", "image": "/blocks/cards/placeholder.svg", "price": "389", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" }
+      { "path": "/en-gb/destinations/seattle", "title": "Seattle", "city": "Seattle", "image": "/blocks/cards/card-placeholder.jpg", "price": "199", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
+      { "path": "/en-gb/destinations/san-francisco", "title": "San Francisco", "city": "San Francisco", "image": "/blocks/cards/card-placeholder.jpg", "price": "249", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
+      { "path": "/en-gb/destinations/los-angeles", "title": "Los Angeles", "city": "Los Angeles", "image": "/blocks/cards/card-placeholder.jpg", "price": "229", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
+      { "path": "/en-gb/destinations/new-york", "title": "New York", "city": "New York", "image": "/blocks/cards/card-placeholder.jpg", "price": "279", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
+      { "path": "/en-gb/destinations/honolulu", "title": "Honolulu", "city": "Honolulu", "image": "/blocks/cards/card-placeholder.jpg", "price": "459", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" },
+      { "path": "/en-gb/destinations/anchorage", "title": "Anchorage", "city": "Anchorage", "image": "/blocks/cards/card-placeholder.jpg", "price": "389", "currency": "£", "cta-text": "Book now", "cta-link": "/en-gb/" }
     ]
   },
   "articles": {
@@ -20,10 +20,10 @@
     "offset": 0,
     "limit": 4,
     "data": [
-      { "path": "/en-gb/magazine/first-class", "title": "First seated, first served, First Class", "description": "Level up your trip with our premium cabin.", "image": "/blocks/cards/placeholder.svg", "category": "Onboard", "date": "2026-08-01" },
-      { "path": "/en-gb/magazine/seamless-travel", "title": "Seamless travel, wherever you are", "description": "Get the Alaska Airlines app and travel smarter.", "image": "/blocks/cards/placeholder.svg", "category": "App", "date": "2026-07-15" },
-      { "path": "/en-gb/magazine/global-partners", "title": "Go global with our partners", "description": "oneworld and beyond — earn and redeem worldwide.", "image": "/blocks/cards/placeholder.svg", "category": "Partners", "date": "2026-06-20" },
-      { "path": "/en-gb/magazine/dine-onboard", "title": "Order ahead, dine onboard", "description": "Pre-order fresh food for your flight.", "image": "/blocks/cards/placeholder.svg", "category": "Onboard", "date": "2026-05-30" }
+      { "path": "/en-gb/magazine/first-class", "title": "First seated, first served, First Class", "description": "Level up your trip with our premium cabin.", "image": "/blocks/cards/card-placeholder.jpg", "category": "Onboard", "date": "2026-08-01" },
+      { "path": "/en-gb/magazine/seamless-travel", "title": "Seamless travel, wherever you are", "description": "Get the Alaska Airlines app and travel smarter.", "image": "/blocks/cards/card-placeholder.jpg", "category": "App", "date": "2026-07-15" },
+      { "path": "/en-gb/magazine/global-partners", "title": "Go global with our partners", "description": "oneworld and beyond — earn and redeem worldwide.", "image": "/blocks/cards/card-placeholder.jpg", "category": "Partners", "date": "2026-06-20" },
+      { "path": "/en-gb/magazine/dine-onboard", "title": "Order ahead, dine onboard", "description": "Pre-order fresh food for your flight.", "image": "/blocks/cards/card-placeholder.jpg", "category": "Onboard", "date": "2026-05-30" }
     ]
   },
   "rewards-benefits": {
