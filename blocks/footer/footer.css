@@ -59,9 +59,16 @@ footer .footer-zone-links {
 /* ===== Zone A — desktop grid ===== */
 footer .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1.4fr 1.2fr 0.9fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1.2fr;
   gap: 40px;
   padding: 48px 0 32px;
+}
+
+/* stacked column groups (col 4: deals+feedback, col 5: app+follow) */
+footer .footer-colgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 footer .footer-col-head {
@@ -157,9 +164,16 @@ footer .footer-app-qr img {
   display: block;
 }
 
-/* ===== Zone B — Follow us ===== */
-footer .footer-zone-connect {
-  padding: 24px 0;
+/* ===== Follow us (in col 5, below Get the app) ===== */
+footer .footer-follow-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+footer .footer-follow-title .ind {
+  fill: var(--footer-fg);
+  margin-left: 0;
 }
 
 footer .footer-social-row {
@@ -239,6 +253,11 @@ footer .footer-logo-ow {
     padding: 0;
   }
 
+  footer .footer-colgroup {
+    display: block;
+    gap: 0;
+  }
+
   footer .footer-col {
     padding: 0 16px;
     border-bottom: 1px solid var(--footer-divider);
@@ -265,20 +284,17 @@ footer .footer-logo-ow {
     padding-bottom: 12px;
   }
 
-  /* app column is not an accordion — always visible heading */
+  /* app + follow are standalone blocks (not accordions), left-aligned */
   footer .footer-col-app,
   footer .footer-social {
     padding: 20px 16px;
+    border-bottom: 1px solid var(--footer-divider);
   }
 
   footer .footer-col-app .footer-col-title,
   footer .footer-social .footer-col-title {
-    display: block;
+    display: flex;
   }
-
-  footer .footer-zone-connect { padding: 0; }
-
-  footer .footer-social { border-bottom: 1px solid var(--footer-divider); }
 
   footer .footer-zone-legal { padding: 20px 16px; }
 
