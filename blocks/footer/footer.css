@@ -9,7 +9,7 @@
   --footer-page-bg: #01426a;   /* lighter blue page background around the card */
   --footer-card-bg: #00213e;   /* dark navy rounded card interior */
   --footer-fg: #fff;
-  --footer-muted: rgb(255 255 255 / 70%);
+  --footer-muted: #fff;
   --footer-divider: rgb(255 255 255 / 15%);
   --footer-indicator: rgb(255 255 255 / 60%);
   --footer-maxw: 1200px;
