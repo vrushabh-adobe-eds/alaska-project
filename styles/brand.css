@@ -1,0 +1,32 @@
+/*
+ * Alaska Airlines brand tokens
+ * Extracted from https://www.alaskaair.com/ (live, 2026) — Phase 0 Foundations.
+ * Brand fonts "Circular" / "AS Circular" are proprietary (Lineto) and cannot be
+ * redistributed; we use Alaska's own fallback stack (Helvetica Neue → Arial).
+ */
+:root {
+  /* brand palette */
+  --alaska-navy: #01426a;        /* primary — headings, nav, brand blocks (rgb 1,66,106) */
+  --alaska-blue: #2774ae;        /* accent / links (rgb 39,116,174) */
+  --alaska-blue-dark: #1d5a8a;   /* link hover */
+  --alaska-cream: #fff6d2;       /* light section wash (rgb 255,246,210) */
+  --alaska-ink: #3c3b3f;         /* body text (rgb 60,59,63) */
+
+  /* mapped EDS tokens */
+  --background-color: #fff;
+  --light-color: var(--alaska-cream);
+  --dark-color: var(--alaska-navy);
+  --text-color: var(--alaska-ink);
+  --heading-color: var(--alaska-navy);
+  --link-color: var(--alaska-blue);
+  --link-hover-color: var(--alaska-blue-dark);
+
+  /* fonts */
+  --body-font-family: circular, "Helvetica Neue", helvetica, arial, sans-serif;
+  --heading-font-family: "AS Circular", "Helvetica Neue", arial, sans-serif;
+
+  /* spacing */
+  --section-padding: 32px;
+  --content-max-width: 1232px;
+  --nav-height: 64px;
+}
