@@ -49,7 +49,7 @@ footer .footer-inner::after {
     radial-gradient(140% 140% at 100% 100%, transparent 72%, rgb(0 131 138 / 30%) 72.4%, transparent 73.4%);
 }
 
-footer a {
+footer a:any-link {
   color: var(--footer-fg);
   text-decoration: none;
 }
