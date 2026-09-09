@@ -1,20 +1,311 @@
+/*
+ * Alaska Airlines footer (en-gb) — one continuous navy (#01426A) block,
+ * three zones: A link columns, B app+social, C legal. Tokens from brand.css.
+ */
+
+/* stylelint-disable no-descending-specificity -- independent footer sub-components */
+
+:root {
+  --footer-bg: #01426a;
+  --footer-fg: #fff;
+  --footer-muted: rgb(255 255 255 / 70%);
+  --footer-divider: rgb(255 255 255 / 15%);
+  --footer-indicator: rgb(255 255 255 / 60%);
+  --footer-maxw: 1200px;
+}
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--footer-bg);
+  color: var(--footer-fg);
+  font-family: var(--body-font-family);
+  font-size: 14px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-inner {
+  max-width: var(--footer-maxw);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-footer .footer p {
+footer a {
+  color: var(--footer-fg);
+  text-decoration: none;
+}
+
+footer .footer-zone {
+  border-top: 1px solid var(--footer-divider);
+}
+
+footer .footer-zone-links {
+  border-top: none;
+}
+
+/* ===== Zone A — desktop grid ===== */
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1.4fr 1.2fr 0.9fr 1fr;
+  gap: 40px;
+  padding: 48px 0 32px;
+}
+
+footer .footer-col-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--footer-fg);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: default;
+}
+
+footer .footer-chevron {
+  display: none;
+  fill: currentcolor;
+  flex: none;
+  transition: transform 0.3s ease;
+}
+
+footer .footer-col-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer-col-links li {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer-col-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  transition: opacity 0.15s ease;
+}
+
+footer .footer-col-links a:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+footer .cta-icon {
+  fill: currentcolor;
+  flex: none;
+}
+
+/* indicator icons (external / new tab) */
+footer .ind {
+  fill: var(--footer-indicator);
+  margin-left: 4px;
+  flex: none;
+}
+
+/* CTA columns (Get deals / Feedback) */
+footer .footer-col-cta .footer-col-links a {
+  gap: 8px;
+}
+
+/* Get the app column */
+footer .footer-col-app .footer-col-title,
+footer .footer-social .footer-col-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--footer-fg);
+}
+
+footer .footer-app-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+footer .footer-app-badges img {
+  height: 40px;
+  width: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+
+/* ===== Zone B — Follow us ===== */
+footer .footer-zone-connect {
+  padding: 24px 0;
+}
+
+footer .footer-social-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+footer .footer-social-icon {
+  display: inline-flex;
+  transition: opacity 0.15s ease;
+}
+
+footer .footer-social-icon svg {
+  fill: var(--footer-fg);
+}
+
+footer .footer-social-icon:hover {
+  opacity: 0.7;
+}
+
+/* ===== Zone C — legal ===== */
+footer .footer-zone-legal {
+  padding: 16px 0 24px;
+}
+
+footer .footer-notices p {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--footer-muted);
+}
+
+footer .footer-notices .ind {
+  margin-left: 0;
+  margin-top: 2px;
+}
+
+footer .footer-legal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+footer .footer-copy {
+  margin: 0;
+  font-size: 12px;
+  color: var(--footer-muted);
+}
+
+footer .footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+footer .footer-logo-as {
+  height: 34px;
+  width: auto;
+}
+
+footer .footer-logo-ow {
+  height: 42px;
+  width: auto;
+}
+
+/* ===== mobile (<900px): accordion + stacking ===== */
+@media (width <= 899px) {
+  footer .footer-inner { padding: 0; }
+
+  footer .footer-grid {
+    display: block;
+    padding: 0;
+  }
+
+  footer .footer-col {
+    padding: 0 16px;
+    border-bottom: 1px solid var(--footer-divider);
+  }
+
+  footer .footer-col-head {
+    margin: 0;
+    padding: 14px 0;
+    cursor: pointer;
+  }
+
+  footer .footer-chevron { display: block; }
+
+  footer .footer-col.open .footer-chevron { transform: rotate(180deg); }
+
+  footer .footer-col-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  footer .footer-col.open .footer-col-links {
+    max-height: 600px;
+    padding-bottom: 12px;
+  }
+
+  /* app column is not an accordion — always visible heading */
+  footer .footer-col-app,
+  footer .footer-social {
+    padding: 20px 16px;
+  }
+
+  footer .footer-col-app .footer-col-title,
+  footer .footer-social .footer-col-title {
+    display: block;
+  }
+
+  footer .footer-app-badges img { height: 40px; }
+
+  footer .footer-zone-connect { padding: 0; }
+
+  footer .footer-social { border-bottom: 1px solid var(--footer-divider); }
+
+  footer .footer-zone-legal { padding: 20px 16px; }
+
+  /* Zone C stacks, all left-aligned */
+  footer .footer-legal-row {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  footer .footer-logos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ===== print ===== */
+@media print {
+  footer {
+    background: #fff;
+    color: #222;
+  }
+
+  footer a { color: #222; }
+
+  footer .footer-app-badges,
+  footer .footer-social,
+  footer .footer-chevron,
+  footer .footer-logos {
+    display: none;
+  }
+
+  footer .footer-col-links {
+    max-height: none;
+    overflow: visible;
+  }
+
+  footer .footer-col-head,
+  footer .footer-copy,
+  footer .footer-notices p {
+    color: #222;
   }
 }
