@@ -27,6 +27,13 @@
   height: 100%;
 }
 
+/* fallback background image (code-bus) when no authored image survives */
+.hero.hero-bg-fallback {
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+}
+
 /* readability overlay */
 .hero::before {
   content: "";

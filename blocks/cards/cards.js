@@ -53,10 +53,22 @@ function cardFromEntry(entry) {
   if (entry.image) {
     const imgWrap = document.createElement('div');
     imgWrap.className = 'cards-card-image';
-    const pic = createOptimizedPicture(entry.image, entry.title || '', false, [{ width: '750' }]);
-    const img = pic.querySelector('img');
-    if (img) { img.loading = 'lazy'; img.decoding = 'async'; }
-    imgWrap.append(pic);
+    // Optimize only pipeline-served images; use plain <img> for code-bus assets.
+    if (entry.image.startsWith('/blocks/') || entry.image.endsWith('.svg')) {
+      const img = document.createElement('img');
+      img.src = entry.image;
+      img.alt = entry.title || entry.city || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 750;
+      img.height = 563;
+      imgWrap.append(img);
+    } else {
+      const pic = createOptimizedPicture(entry.image, entry.title || '', false, [{ width: '750' }]);
+      const img = pic.querySelector('img');
+      if (img) { img.loading = 'lazy'; img.decoding = 'async'; }
+      imgWrap.append(pic);
+    }
     li.append(imgWrap);
   }
 
