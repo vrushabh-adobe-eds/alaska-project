@@ -128,25 +128,31 @@ export default async function decorate(block) {
   block.textContent = '';
   const inner = el('div', 'footer-inner');
 
-  // ===== Zone A — link columns =====
+  // ===== Zone A — link columns (5-col grid matching the source) =====
+  // Cols 1-3: About Alaska, Customer service, Products and services.
+  // Col 4: Get deals + Feedback stacked. Col 5: Get the app (QR) + Follow us stacked.
   const zoneA = el('div', 'footer-zone footer-zone-links');
   const grid = el('div', 'footer-grid');
-  GROUPS.forEach((g, i) => grid.append(buildLinkGroup(g, i)));
 
-  // "Get the app" column — single QR code (matches the live /en-gb footer)
+  grid.append(buildLinkGroup(GROUPS[0], 0));
+  grid.append(buildLinkGroup(GROUPS[1], 1));
+  grid.append(buildLinkGroup(GROUPS[2], 2));
+
+  // Col 4 — Get deals + Feedback stacked
+  const dealsCol = el('div', 'footer-colgroup');
+  dealsCol.append(buildLinkGroup(GROUPS[3], 3), buildLinkGroup(GROUPS[4], 4));
+  grid.append(dealsCol);
+
+  // Col 5 — Get the app (QR) + Follow us (social) stacked
+  const connectCol = el('div', 'footer-colgroup footer-connect');
   const appCol = el('div', 'footer-col footer-col-app');
   appCol.innerHTML = `
     <h2 class="footer-col-title">Get the app</h2>
     <a class="footer-app-qr" href="https://www.atmosrewards.com/en-gb/content/mobile-apps" aria-label="Get the Alaska Airlines app">
       <img src="${ICON}/dual-brand-app.svg" alt="Scan to download the Alaska Airlines app" width="88" height="88">
     </a>`;
-  grid.append(appCol);
-  zoneA.append(grid);
-
-  // ===== Zone B — Follow us + Get the app row =====
-  const zoneB = el('div', 'footer-zone footer-zone-connect');
   const social = el('div', 'footer-social');
-  social.innerHTML = '<h2 class="footer-col-title">Follow us</h2>';
+  social.innerHTML = `<h2 class="footer-col-title footer-follow-title">Follow us${EXT}</h2>`;
   const socialRow = el('div', 'footer-social-row');
   SOCIAL.forEach(([label, href, path]) => {
     const a = el('a', 'footer-social-icon');
@@ -158,7 +164,10 @@ export default async function decorate(block) {
     socialRow.append(a);
   });
   social.append(socialRow);
-  zoneB.append(social);
+  connectCol.append(appCol, social);
+  grid.append(connectCol);
+
+  zoneA.append(grid);
 
   // ===== Zone C — sub-footer / legal =====
   const zoneC = el('div', 'footer-zone footer-zone-legal');
@@ -176,7 +185,7 @@ export default async function decorate(block) {
     </div>`;
   zoneC.append(notices, legalRow);
 
-  inner.append(zoneA, zoneB, zoneC);
+  inner.append(zoneA, zoneC);
   block.append(inner);
 
   // ===== mobile accordion (one open at a time) =====
