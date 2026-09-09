@@ -1,0 +1,12 @@
+{
+  "sites": {
+    "alaska-project": {
+      "previewOrg": "vrushabh-adobe-eds",
+      "previewSite": "alaska-project",
+      "contentHostUrl": "https://content.da.live/vrushabh-adobe-eds/alaska-project/"
+    }
+  },
+  "features": [
+    "site-planning"
+  ]
+}

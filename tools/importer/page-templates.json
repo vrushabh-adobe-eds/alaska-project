@@ -1,0 +1,271 @@
+{
+  "templates": [
+    {
+      "name": "marketing-landing",
+      "urls": [
+        "https://www.alaskaair.com/",
+        "https://www.alaskaair.com/atmosrewards/content/account-help/account-overview",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards",
+        "https://www.alaskaair.com/atmosrewards/content/global-getaways",
+        "https://www.alaskaair.com/atmosrewards/content/sign-up/atmos-status-luggage-tag",
+        "https://www.alaskaair.com/atmosrewards/content/use-points/award-charts",
+        "https://www.alaskaair.com/betaaccount/deposit",
+        "https://www.alaskaair.com/betaaccount/profile-settings",
+        "https://www.alaskaair.com/content/deals/special-offers/price-guarantee-thank-you"
+      ],
+      "coverageGaps": [],
+      "description": "Landing page layout with hero and multiple cards grids; homepage and Atmos Rewards section hubs",
+      "blocks": []
+    },
+    {
+      "name": "flight-status-tool",
+      "urls": [
+        "https://www.alaskaair.com/FlightNotifications/View",
+        "https://www.alaskaair.com/content/travel-info/diversion/flying-from-bay-area",
+        "https://www.alaskaair.com/content/travel-info/diversion/flying-from-bay-area/san-jose",
+        "https://www.alaskaair.com/flightnotifications",
+        "https://www.alaskaair.com/flightstatus"
+      ],
+      "coverageGaps": [],
+      "description": "Interactive tool page with an app/status widget and minimal supporting default content",
+      "blocks": []
+    },
+    {
+      "name": "utility-tool",
+      "urls": [
+        "https://www.alaskaair.com/Shopping/CurrencyConverter"
+      ],
+      "coverageGaps": [],
+      "description": "Single-purpose utility widget page with a compact form/tool and little surrounding content",
+      "blocks": []
+    },
+    {
+      "name": "account-form",
+      "urls": [
+        "https://www.alaskaair.com/UserReset/ForgotUserName",
+        "https://www.alaskaair.com/UserReset/ResetPasswordWithMatchCriteria"
+      ],
+      "coverageGaps": [],
+      "description": "Account self-service form layout with labeled input fields and a submit action",
+      "blocks": []
+    },
+    {
+      "name": "rewards-info-article",
+      "urls": [
+        "https://www.alaskaair.com/atmosrewards/content/account-help/gift-certificates",
+        "https://www.alaskaair.com/atmosrewards/content/benefits/complimentary-upgrades",
+        "https://www.alaskaair.com/atmosrewards/content/club-49/faq",
+        "https://www.alaskaair.com/atmosrewards/content/club-49/terms",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/benefits/visa-ascent",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/benefits/visa-small-business",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/compare",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/faq/99-dollar-companion-fare",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/faq/points-sharing",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-ascent/terms",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-small-business",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit/terms/instant-travel-delay-credit",
+        "https://www.alaskaair.com/atmosrewards/content/credit-cards/visa-summit/terms/points-transfer-program",
+        "https://www.alaskaair.com/atmosrewards/content/faq/2026-updates",
+        "https://www.alaskaair.com/atmosrewards/content/faq/credit-cards",
+        "https://www.alaskaair.com/atmosrewards/content/sign-up/share-atmos-status",
+        "https://www.alaskaair.com/car-rental/",
+        "https://www.alaskaair.com/car-rental/transfers",
+        "https://www.alaskaair.com/content/advisories/mobile-advisory",
+        "https://www.alaskaair.com/content/advisories/travel-advisories",
+        "https://www.alaskaair.com/content/airport-lounge/day-pass",
+        "https://www.alaskaair.com/content/airport-lounge/perks-and-amenities",
+        "https://www.alaskaair.com/content/explore/global",
+        "https://www.alaskaair.com/content/explore/ski/snowbasin-resort",
+        "https://www.alaskaair.com/content/explore/things-to-do/beach-destinations",
+        "https://www.alaskaair.com/content/explore/things-to-do/big-cities",
+        "https://www.alaskaair.com/content/gifts-and-products/gift-cards-certificates/gift-card-overview",
+        "https://www.alaskaair.com/content/group-travel/groups-travel-overview/groups-terms-and-conditions",
+        "https://www.alaskaair.com/content/ndc/air-shopping/air-shop-descriptions",
+        "https://www.alaskaair.com/content/ndc/air-shopping/air-shopping-rq",
+        "https://www.alaskaair.com/content/ndc/new",
+        "https://www.alaskaair.com/content/ndc/offer-price/offer-price-descriptions",
+        "https://www.alaskaair.com/content/ndc/offer-price/offer-price-rq",
+        "https://www.alaskaair.com/content/ndc/order-change/order-change-descriptions",
+        "https://www.alaskaair.com/content/ndc/order-change/order-change-rq",
+        "https://www.alaskaair.com/content/ndc/order-create/order-create-descriptions",
+        "https://www.alaskaair.com/content/ndc/order-create/order-create-rq",
+        "https://www.alaskaair.com/content/ndc/order-reshop/order-reshop-descriptions",
+        "https://www.alaskaair.com/content/ndc/order-reshop/order-reshop-rq",
+        "https://www.alaskaair.com/content/ndc/order-retrieve/order-retrieve-descriptions",
+        "https://www.alaskaair.com/content/ndc/order-retrieve/order-retrieve-rq",
+        "https://www.alaskaair.com/content/ndc/seat-availability/seat-availability-descriptions",
+        "https://www.alaskaair.com/content/ndc/seat-availability/seat-availability-rq",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/agent-policies/extra-seat",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/agent-policies/law-compliance",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/announcements",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/resources/codeshare-partners",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/resources/overview",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/secure-flight",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/ticketing/name-validation",
+        "https://www.alaskaair.com/content/travel-agent/agent-info/ticketing/strictest-fare-rule",
+        "https://www.alaskaair.com/content/travel-agent/first-time-visitors",
+        "https://www.alaskaair.com/content/travel-agent/site-map"
+      ],
+      "coverageGaps": [],
+      "description": "Text-dominant informational article layout with headings and paragraphs, few or no blocks",
+      "blocks": []
+    },
+    {
+      "name": "hero-content-page",
+      "urls": [
+        "https://www.alaskaair.com/atmosrewards/content/benefits/status-protect",
+        "https://www.alaskaair.com/booking/link-reservations",
+        "https://www.alaskaair.com/booking/reservation-lookup/",
+        "https://www.alaskaair.com/content/gifts-and-products/gift-cards-certificates/bonus-travel-terms",
+        "https://www.alaskaair.com/content/group-travel/charter-flights",
+        "https://www.alaskaair.com/content/group-travel/groups-meeting-convention-travel",
+        "https://www.alaskaair.com/content/group-travel/groups-wedding-travel",
+        "https://www.alaskaair.com/content/training/flight-attendant/crew-access",
+        "https://www.alaskaair.com/content/training/flight-attendant/flight-attendant-overview",
+        "https://www.alaskaair.com/miles/buy",
+        "https://www.alaskaair.com/miles/transfer"
+      ],
+      "coverageGaps": [],
+      "description": "Hero banner at top followed by stacked default content sections and occasional cards",
+      "blocks": []
+    },
+    {
+      "name": "legal-terms-listing",
+      "urls": [
+        "https://www.alaskaair.com/atmosrewards/content/legal/terms/airline-partner-eligible-flight-ranges",
+        "https://www.alaskaair.com/atmosrewards/content/legal/terms/consumer-credit-card-benefits",
+        "https://www.alaskaair.com/atmosrewards/content/legal/terms/special-offers/1m-points",
+        "https://www.alaskaair.com/atmosrewards/content/legal/terms/special-offers/mariners-5x-points-terms",
+        "https://www.alaskaair.com/atmosrewards/content/partners/airlines",
+        "https://www.alaskaair.com/atmosrewards/content/partners/airlines/aer-lingus",
+        "https://www.alaskaair.com/atmosrewards/content/partners/airlines/condor",
+        "https://www.alaskaair.com/atmosrewards/content/partners/airlines/japan-airlines",
+        "https://www.alaskaair.com/atmosrewards/content/partners/airlines/porter",
+        "https://www.alaskaair.com/atmosrewards/content/partners/earn-everyday",
+        "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-partnerships",
+        "https://www.alaskaair.com/content/easybiz/help/administrative-faq",
+        "https://www.alaskaair.com/content/easybiz/help/my-account",
+        "https://www.alaskaair.com/content/easybiz/help/user-guide/24-hour-web-check-in",
+        "https://www.alaskaair.com/content/easybiz/help/user-guide/easy-biz-account",
+        "https://www.alaskaair.com/content/easybiz/help/user-guide/purchase-online"
+      ],
+      "coverageGaps": [],
+      "description": "Dense legal/terms text layout and long partner listing pages with repeated link rows",
+      "blocks": []
+    },
+    {
+      "name": "content-article",
+      "urls": [
+        "https://www.alaskaair.com/content/about-us",
+        "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-baggage-return",
+        "https://www.alaskaair.com/content/about-us/customer-commitment/customer-commitment-flexibility",
+        "https://www.alaskaair.com/content/about-us/esg/accountability",
+        "https://www.alaskaair.com/content/about-us/esg/evergreen",
+        "https://www.alaskaair.com/content/about-us/esg/people-communities/belong",
+        "https://www.alaskaair.com/content/about-us/esg/people-communities/communities",
+        "https://www.alaskaair.com/content/about-us/history/bob-ellis",
+        "https://www.alaskaair.com/content/about-us/history/horizon-air-history",
+        "https://www.alaskaair.com/content/about-us/history/mudhole-smith",
+        "https://www.alaskaair.com/content/about-us/site-info/browser-info",
+        "https://www.alaskaair.com/content/about-us/site-info/full-fare-advertising",
+        "https://www.alaskaair.com/content/about-us/site-info/overview",
+        "https://www.alaskaair.com/content/about-us/social-responsibility/alaska-airlines-foundation",
+        "https://www.alaskaair.com/content/about-us/social-responsibility/corporate-giving",
+        "https://www.alaskaair.com/content/about-us/supplier-registration",
+        "https://www.alaskaair.com/content/airports/alaska/kotzebue/ralph-wien-memorial",
+        "https://www.alaskaair.com/content/airports/california/redding/redding-municipal-airport",
+        "https://www.alaskaair.com/content/airports/hawaii/oahu/honolulu-international",
+        "https://www.alaskaair.com/content/airports/new-mexico/albuquerque/albuquerque-international-sunport",
+        "https://www.alaskaair.com/content/airports/texas/dallas/dallas-fort-worth-international",
+        "https://www.alaskaair.com/content/airports/texas/dallas/dallas-love-field",
+        "https://www.alaskaair.com/content/airports/washington/bellingham/bellingham-international",
+        "https://www.alaskaair.com/content/deals/special-offers/price-guarantee",
+        "https://www.alaskaair.com/content/legal/accessible-canada-act",
+        "https://www.alaskaair.com/content/legal/contract-of-carriage",
+        "https://www.alaskaair.com/content/legal/privacy-policy",
+        "https://www.alaskaair.com/content/legal/terms-conditions/american-airlines-upgrader-tc",
+        "https://www.alaskaair.com/content/legal/terms-conditions/tour-operator-agreement",
+        "https://www.alaskaair.com/content/travel-info/accessible-services/airport-accessibility",
+        "https://www.alaskaair.com/content/travel-info/accessible-services/specialservices-hearing",
+        "https://www.alaskaair.com/content/travel-info/accessible-services/specialservices-support-animals",
+        "https://www.alaskaair.com/content/travel-info/at-the-airport/airport-boarding-times",
+        "https://www.alaskaair.com/content/travel-info/at-the-airport/same-day-flight-changes",
+        "https://www.alaskaair.com/content/travel-info/at-the-airport/same-day-flight-changes/same-day-standby",
+        "https://www.alaskaair.com/content/travel-info/at-the-airport/same-day-flight-changes/standby-rules",
+        "https://www.alaskaair.com/content/travel-info/baggage/baggage-claim/20-minute-guarantee",
+        "https://www.alaskaair.com/content/travel-info/baggage/baggage-claim/delayed-damaged-missing",
+        "https://www.alaskaair.com/content/travel-info/baggage/baggage-fee-waivers-exceptions",
+        "https://www.alaskaair.com/content/travel-info/baggage/checked-bags/bag-tag-stations",
+        "https://www.alaskaair.com/content/travel-info/baggage/checked-bags/electronic-bag-tag",
+        "https://www.alaskaair.com/content/travel-info/baggage/lost-and-found",
+        "https://www.alaskaair.com/content/travel-info/baggage/prohibited-items/alcohol",
+        "https://www.alaskaair.com/content/travel-info/baggage/prohibited-items/pressurized-styrofoam-hazardous",
+        "https://www.alaskaair.com/content/travel-info/baggage/special-baggage/transporting-firearms",
+        "https://www.alaskaair.com/content/travel-info/baggage/special-baggage/traveling-with-musical-instruments",
+        "https://www.alaskaair.com/content/travel-info/before-your-trip/belize-tourism-tax",
+        "https://www.alaskaair.com/content/travel-info/before-your-trip/international-travel-information",
+        "https://www.alaskaair.com/content/travel-info/before-your-trip/tsa-pre-check",
+        "https://www.alaskaair.com/content/travel-info/bereavement-fare",
+        "https://www.alaskaair.com/content/travel-info/diversion/flying-from-bay-area/oakland",
+        "https://www.alaskaair.com/content/travel-info/flight-experience/airport-lobby",
+        "https://www.alaskaair.com/content/travel-info/flight-experience/inflight-entertainment/faqs",
+        "https://www.alaskaair.com/content/travel-info/flight-experience/inflight-entertainment/text-messaging",
+        "https://www.alaskaair.com/content/travel-info/flight-experience/main-cabin",
+        "https://www.alaskaair.com/content/travel-info/flight-experience/saver",
+        "https://www.alaskaair.com/content/travel-info/fly-alaska/24-hour-cancellation",
+        "https://www.alaskaair.com/content/travel-info/fly-alaska/travel-tips",
+        "https://www.alaskaair.com/content/travel-info/optional-services-fees",
+        "https://www.alaskaair.com/content/travel-info/optional-services-fees/fee-changes",
+        "https://www.alaskaair.com/content/travel-info/optional-services-fees/other-airline-websites",
+        "https://www.alaskaair.com/content/travel-info/our-aircraft/737-800-star-wars-transport-to-the-disneyland-resort",
+        "https://www.alaskaair.com/content/travel-info/our-aircraft/737-oneworld",
+        "https://www.alaskaair.com/content/travel-info/policies/how-to-manage-my-reservation",
+        "https://www.alaskaair.com/content/travel-info/policies/pets-traveling-international",
+        "https://www.alaskaair.com/content/travel-info/policies/pets-traveling-with-pets/pets-animal-relief-areas",
+        "https://www.alaskaair.com/content/travel-info/policies/pets-traveling-with-pets/travel-crates",
+        "https://www.alaskaair.com/content/travel-info/policies/traveling-with-lap-infants"
+      ],
+      "coverageGaps": [],
+      "description": "Standard content article layout: heading, body copy and images in stacked default sections",
+      "blocks": []
+    },
+    {
+      "name": "promo-feature-page",
+      "urls": [
+        "https://www.alaskaair.com/content/about-us/alaska-hawaiian",
+        "https://www.alaskaair.com/content/explore/hawaii"
+      ],
+      "coverageGaps": [],
+      "description": "Promotional feature layout with large imagery and short marketing copy blocks",
+      "blocks": []
+    },
+    {
+      "name": "social-hub-page",
+      "urls": [
+        "https://www.alaskaair.com/content/about-us/follow-us"
+      ],
+      "coverageGaps": [],
+      "description": "Hero-led hub page linking out to social and follow destinations",
+      "blocks": []
+    },
+    {
+      "name": "feedback-form-page",
+      "urls": [
+        "https://www.alaskaair.com/feedback/accessibility",
+        "https://www.alaskaair.com/feedback/general-comments"
+      ],
+      "coverageGaps": [],
+      "description": "Feedback layout combining intro cards with an embedded multi-field form",
+      "blocks": []
+    },
+    {
+      "name": "search-results",
+      "urls": [
+        "https://www.alaskaair.com/search/"
+      ],
+      "coverageGaps": [],
+      "description": "Search interface layout with tabbed filters and an accordion result/help structure",
+      "blocks": []
+    }
+  ]
+}
