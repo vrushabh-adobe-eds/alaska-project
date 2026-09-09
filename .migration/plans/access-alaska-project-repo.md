@@ -1,46 +1,63 @@
-The plan is complete and you've confirmed the parameters. Let me exit plan mode to begin execution.Plan approved — starting execution. Let me begin Stage 1 by discovering the sitemap and detecting the CMS platform.I've hit a mode conflict: the environment is still enforcing **plan mode**, so shell commands and file writes are blocked — but read-only web fetches work. I can gather discovery data now, but I won't be able to write the final HTML report and JSON manifest until Execute mode is active. Let me make progress on the read-only research portion (Stage 1 discovery) while that's sorted.AEM confirmed (`/content/` tree, ASMX/ASP endpoints, `/etc` patterns). The main `sitemap.xml` is a flat urlset (~1,000+ URLs); `sitemap_index.xml` is a 404. Let me pull the section distribution and verify a stratified sample.Main domain: **775 URLs**, AEM `/content/` tree dominant (762), airports being the largest cluster (407). The `news.` subdomain is separate (out of scope, Rule 2). Now let me live-verify a stratified sample across sections and identify template structure.I need to flag a real blocker before I go further, rather than fabricate numbers.
+# Header Migration Plan — alaskaair.com/en-gb (Phase 1: Global Elements)
 
-## Where I am
+## Objective
+Build a two-tier, sticky, responsive Alaska Airlines **header** block for the EDS project, instrumented from the live source `https://www.alaskaair.com/en-gb/`, matching all 12 requirement groups (two-tier structure, mega-menus, sticky collapse, mobile drawer, en-gb locale, oneworld badge, search). This is Phase 1 of the migration, building on the Phase 0 design tokens already committed.
 
-**Stage 1 discovery is genuinely done** from the sitemaps:
+## Approach
+Use the **`excat-navigation-orchestrator`** skill — it is purpose-built for header/nav instrumentation via desktop, mobile, megamenu, and validation sub-agents, requires real screenshots (never assumes structure), and drives Playwright hover-per-item extraction for mega-menus. This matches the requirement to "measure source height exactly — do not guess." A manual build would risk the exact-measurement and hover-reveal pitfalls the requirements call out.
 
-- **CMS detected: Adobe Experience Manager** — confirmed by the `/content/` tree (762 of 775 URLs), ASMX/ASP endpoints, and `/etc`-style disallow rules in robots.txt.
-- **Authoritative inventory source:** `https://www.alaskaair.com/sitemap.xml` is a flat urlset of **775 URLs**. `sitemap_index.xml` is a 404. The `news.alaskaair.com` newsroom is a **separate subdomain → out of scope** (Rule 2).
-- **Section distribution (from sitemap):**
+Source of truth: the live `/en-gb/` page rendered in a headless browser (the site is JS-rendered, so static fetch is insufficient — confirmed earlier in this project).
 
-| Section (`/content/…`) | Count |
-|---|---|
-| airports | 407 |
-| about-us | 103 |
-| legal | 82 |
-| travel-agent | 71 |
-| travel-info | 70 |
-| ndc | 47 |
-| easybiz | 18 |
-| explore | 16 |
-| training | 12 |
-| group-travel | 12 |
-| deals / airport-lounge / gifts / others | ~24 |
-| non-`/content/` (booking, betaaccount, car-rental, UserReset…) | 13 |
+## Key inputs already in place (Phase 0)
+- `styles/brand.css` — Alaska tokens: navy `#01426a`, blue `#2774ae`, `Circular`/`AS Circular` font stack, `--nav-height`.
+- Requirement adds teal `#00838A`, midnight `#01426A`, and `ASCircularWeb` font family — will reconcile these into the header block CSS / brand tokens.
+- Confirmed CMS: AEM, JS-rendered; `/en-gb/` is one of 6 locale variants.
 
-## The blocker
+## Requirement coverage map (all applied upfront)
+- **Two-tier structure** — dark utility bar (AS mark, Help, locale, Sign In) + white main nav (full logo, nav links, search, oneworld) as two rows in one `<header>`.
+- **Mega-menus** — Book / Manage / Atmos Rewards full-width overlay panels, hover(desktop)/tap(mobile), fade-in 0.15s. Contents extracted live via per-item hover.
+- **Sticky** — no shadow at load; `.header-sticky` at ~60px scroll → `position:fixed`, desktop shadow, utility bar collapses via `max-height`+`overflow:hidden`, `transition:all .25s ease`.
+- **Desktop dims** — utility 36px, nav 64→56px sticky, logo 32→26px, links 14–15px/500 with `#00838A` underline. `--header-height` overridden at mobile.
+- **Mobile ≤768px** — single ~56px bar: hamburger L, centred wordmark, search R; utility content moves into drawer; no height change / no shadow on mobile sticky.
+- **Mobile hamburger** — 3 lines ~2px/5px, teal, morph to ✕ 0.3s.
+- **Mobile drawer** — left slide-in 300px, `translateX(-100%→0)` .3s, Sign In top (teal), accordion nav groups, locale row bottom, scrim `rgba(0,0,0,.5)` (desktop `display:none`).
+- **en-gb locale** — GB flag + "English (UK)" in utility bar (popover) and drawer bottom.
+- **oneworld** — ~20px roundel far-right desktop; footer-only on mobile.
+- **Search** — desktop inline expand (.2s, Esc/✕ collapse); mobile full-width dropdown.
 
-Two problems are preventing the rest of the pipeline from being done *truthfully*:
+## Deliverables
+- `blocks/header/header.js` + `blocks/header/header.css` (instrumented behaviour + styles), plus nav fragment/content wiring.
+- Reconciled brand tokens (teal + midnight added).
+- Screenshot-based visual verification desktop + mobile vs source, iterated to match.
+- Committed to a `phase1-header` branch with a preview link.
 
-1. **The environment is still enforcing plan mode.** `curl` (live HTTP verification) and file writes (the HTML report + JSON manifest) are both blocked. The whole methodology (§8 #1: "hit every URL, never trust cached status") depends on live `curl` checks, and the deliverables are files I need to write.
+## Open items / assumptions
+- Locale: header sourced from **/en-gb** per this prompt (utility bar shows English (UK) + GB flag), even though the site inventory analysis was scoped to English-default. Header markup is global; only the locale indicator differs.
+- Footer is a separate requirement — this plan covers **header only** (footer will be Phase 1b).
+- Proprietary `ASCircularWeb`/`AS Circular` font is not redistributable → system fallback stack (as in Phase 0).
 
-2. **The site is heavily JS-rendered.** Every WebFetch above returned the *navigation chrome*, not the page's real content — even a page I know exists came back looking like a generic homepage, and `/content/airports/seattle` 404'd (the real slug is likely different). This confirms the crawl-gap thesis, but it also means I **cannot cluster templates or verify HTTP status reliably through WebFetch alone** — I need a real headless browser (Playwright) plus `curl -I` for status codes.
+## Checklist
+- [ ] Confirm/launch `excat-navigation-orchestrator` for `https://www.alaskaair.com/en-gb/` (header/nav scope)
+- [ ] Render `/en-gb/` in headless browser; capture desktop + mobile header screenshots (baseline, no assumptions)
+- [ ] Measure exact heights: utility bar, main nav, logo (desktop non-sticky/sticky + mobile)
+- [ ] Extract primary nav items and hover-reveal each mega-menu (Book, Manage, Atmos Rewards) panel contents
+- [ ] Extract utility-bar items (AS mark, Help, locale/en-gb, Sign In) and right-side items (search, oneworld)
+- [ ] Reconcile brand tokens — add teal `#00838A`, midnight `#01426A`, hover `#006269` to header CSS/tokens
+- [ ] Build two-tier `<header>` markup (utility row + main nav row) in the header block
+- [ ] Implement mega-menu dropdowns (full-width overlay, box-shadow, 0.15s fade-in)
+- [ ] Implement sticky behaviour (`.header-sticky` at ~60px, fixed, desktop shadow, utility collapse)
+- [ ] Implement sticky collapse transitions (`transition:all .25s ease`, `max-height`+`overflow:hidden`)
+- [ ] Apply desktop dimensions + nav link styling with `#00838A` underline states
+- [ ] Override `--header-height` at mobile breakpoint (avoid empty white band)
+- [ ] Build mobile compact single bar (hamburger L / centred wordmark / search R, ~56px)
+- [ ] Implement mobile hamburger → ✕ morph (3 lines, teal, 0.3s)
+- [ ] Build left slide-in drawer (300px, Sign In top, accordion nav, locale bottom, scrim)
+- [ ] Scope sticky shadow to desktop only; mobile sticky flat + same height
+- [ ] Implement en-gb locale indicator (GB flag + "English (UK)") in utility bar + drawer
+- [ ] Add oneworld roundel far-right desktop; omit on mobile
+- [ ] Implement desktop inline search expand + mobile full-width search dropdown
+- [ ] Visual-verify desktop + mobile against source; iterate to match
+- [ ] Commit to `phase1-header` branch, preview, and report the `.aem.page` link
 
-I won't invent section-level in-scope/redirect counts, template clusters, or reconciliation data — that would defeat the purpose of a "verify live" report.
-
-## What I need from you
-
-Please **switch the session to Execute (accept-edits) mode** so I can run `curl` and Playwright and write the output files. Once that's active I'll:
-
-1. Live-verify a stratified ~150-URL sample with `curl -I` (status, redirects, meta-refresh).
-2. Render representative pages per section in Playwright to cluster real templates and identify blocks.
-3. Write the interactive 3-tab HTML report + JSON manifest.
-
-One optional accelerator — **the excat migration toolkit** (site-catalog, url-discovery, page-analysis, block-inventory skills) is built for exactly this and would produce a higher-fidelity result than manual crawling. Want me to use those skills, or do a manual curl+Playwright pass? And shall I enable any of the optional plugins (e.g. `excat-commerce` for the booking/shopping routes)?
-
-Toggle Execute mode and tell me your preference, and I'll proceed.
+---
+*This is a planning artifact. Executing the instrumentation, browser rendering, and file writes requires Execute mode.*
