@@ -15,10 +15,26 @@
 }
 
 footer {
+  position: relative;
+  overflow: hidden;
   background-color: var(--footer-bg);
   color: var(--footer-fg);
   font-family: var(--body-font-family);
   font-size: 14px;
+}
+
+/* decorative Auro "swoosh" curves, bottom-right (matches source) */
+footer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 520px;
+  height: 360px;
+  pointer-events: none;
+  background-image:
+    radial-gradient(120% 120% at 100% 100%, transparent 61%, rgb(0 131 138 / 45%) 61.4%, transparent 62.2%),
+    radial-gradient(140% 140% at 100% 100%, transparent 72%, rgb(0 131 138 / 30%) 72.4%, transparent 73.4%);
 }
 
 footer .footer-inner {
@@ -127,18 +143,18 @@ footer .footer-social .footer-col-title {
   color: var(--footer-fg);
 }
 
-footer .footer-app-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-footer .footer-app-badges img {
-  height: 40px;
-  width: auto;
+footer .footer-app-qr {
+  display: inline-block;
+  padding: 8px;
   background: #fff;
   border-radius: 6px;
+  line-height: 0;
+}
+
+footer .footer-app-qr img {
+  width: 88px;
+  height: 88px;
+  display: block;
 }
 
 /* ===== Zone B — Follow us ===== */
@@ -260,8 +276,6 @@ footer .footer-logo-ow {
     display: block;
   }
 
-  footer .footer-app-badges img { height: 40px; }
-
   footer .footer-zone-connect { padding: 0; }
 
   footer .footer-social { border-bottom: 1px solid var(--footer-divider); }
@@ -291,7 +305,7 @@ footer .footer-logo-ow {
 
   footer a { color: #222; }
 
-  footer .footer-app-badges,
+  footer .footer-app-qr,
   footer .footer-social,
   footer .footer-chevron,
   footer .footer-logos {
